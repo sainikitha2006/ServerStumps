@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+/* Cricket field watermark for main sections */
+#intro, #concepts, #example, #quiz {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 420px auto;
+  background-image: url('https://svgshare.com/i/13wA.svg'); /* Subtle cricket field SVG */
+  opacity: 0.98;
+  z-index: 1;
+}
+
+#intro > *, #concepts > *, #example > *, #quiz > * {
+  position: relative;
+  z-index: 2;
+}
+
+#intro::before, #concepts::before, #example::before, #quiz::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 180px;
+  background: linear-gradient(transparent, #f8f9fa 90%);
+  z-index: 1;
+  pointer-events: none;
+}
